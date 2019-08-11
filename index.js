@@ -11,6 +11,42 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+// const titleCased = () => {
+//   return tutorials
+// }
+
+// return word.charAt(0).toUpperCase() + word.slice(1);
+
+
+
+// let students = ["harry", "ron", "hermione", "ginevra"];
+// let rollCall = students.map(student => student + " the wizard")
+
+
+// const titleCased = tutorials.map(function(tutorial) {
+//   return tutorial.charAt(0).toUpperCase() + tutorial.slice(1);
+// })
+
+
+// Long-ass Legacy Solution
+
+function titleCased() {
+  return tutorials.map(function (tutorial) {
+    tutorial = tutorial.split(' ');
+    for (var i = 0; i < tutorial.length; i++) {
+      tutorial[i] = tutorial[i].charAt(0).toUpperCase() + tutorial[i].slice(1);
+    }
+    return tutorial.join(' ');
+  });
 }
+
+// Better ES6 Arrow Function Solution
+
+// const titleCased = tutorials.map(tutorial => {
+//   return tutorial
+//     .toLowerCase()
+//     .split(' ')
+//     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+//     .join(' ');
+// });
+
